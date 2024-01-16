@@ -16,11 +16,11 @@ export const initialState: SortState = {
 // eslint-disable-next-line default-param-last
 const sortReducer = (state: SortState = initialState, action: SortAction): SortState => {
   switch (action.type) {
-  case 'SET_SORT':
-    if (action.payload === 'optimal') return state
-    return { ...state, sort: action.payload }
-  default:
-    return state
+    case 'SET_SORT':
+      if (action.payload === 'optimal') return state
+      return { ...state, sort: action.payload }
+    default:
+      return state
   }
 }
 

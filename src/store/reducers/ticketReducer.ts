@@ -38,20 +38,20 @@ const ticketReducer: Reducer<TicketState, TicketAction> = (
   action: TicketAction
 ): TicketState => {
   switch (action.type) {
-  case 'SET_SEARCH_ID': {
-    return { ...state, searchId: action.payload as string }
-  }
-  case 'ADD_TICKETS': {
-    return { ...state, tickets: [...state.tickets, ...(action.payload as TicketType[])] }
-  }
-  case 'SET_LOADING': {
-    return { ...state, loading: action.payload as boolean }
-  }
-  case 'SET_ERROR': {
-    return { ...state, errors: [...state.errors, action.payload] }
-  }
-  default:
-    return state
+    case 'SET_SEARCH_ID': {
+      return { ...state, searchId: action.payload as string }
+    }
+    case 'ADD_TICKETS': {
+      return { ...state, tickets: [...state.tickets, ...(action.payload as TicketType[])] }
+    }
+    case 'SET_LOADING': {
+      return { ...state, loading: action.payload as boolean }
+    }
+    case 'SET_ERROR': {
+      return { ...state, errors: [...state.errors, action.payload] }
+    }
+    default:
+      return state
   }
 }
 

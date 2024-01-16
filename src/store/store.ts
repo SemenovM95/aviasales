@@ -23,7 +23,7 @@ export interface RootState {
 type StateActions = TicketAction | SortAction | FilterAction
 
 const rootReducer: Reducer<RootState, StateActions> = combineReducers({
-  ticket: ticketReducer,
+  ticket: ticketReducer as Partial<RootState>,
   sort: sortReducer,
   filter: filterReducer,
 })
