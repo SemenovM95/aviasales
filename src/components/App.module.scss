@@ -1,0 +1,24 @@
+.page {
+    padding: 50px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f3f7fa;
+
+    @media (max-width: 660px) {
+        padding: 10px;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+
+        &--img {
+            width: 60px;
+            height: auto;
+        }
+    }
+}
+
+.main {
+    display: flex;
+}

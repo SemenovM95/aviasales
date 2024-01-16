@@ -1,0 +1,55 @@
+.ticket-tabs {
+  display: flex;
+  min-width: 100%;
+  max-height: 50px;
+  height: max-content;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &__button {
+    flex: 1 1 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #DFE5EC;
+    border-right: none;
+    background-color: $colorWhite;
+    color: $colorBlack;
+    transition: background-color .15s;
+    @include pointerCursor;
+
+    &:first-child {
+      border-top-left-radius: $borderRadius;
+      border-bottom-left-radius: $borderRadius;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-top-right-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+      border-right: 2px solid #DFE5EC;
+    }
+
+    &:hover {
+      background-color: darken(white, 10%);
+    }
+
+    &--active {
+      background-color: $colorBlueMain;
+      color: $colorWhite;
+      border: none;
+
+      & + .ticket-tabs__button {
+        border-left: none;
+      }
+
+      &:hover {
+        background-color: $colorBlueMain;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.ticket {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 502px;
+  min-width: 374px;
+  //height: 184px;
+  padding: 20px;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: $colorWhite;
+
+  @media (max-width: 660px) {
+    min-width: 100%;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: $colorBlueMain;
+  }
+
+  &__segments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__segment {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 660px) {
+      gap: 15px;
+      font-size: 12px;
+      grid-template-columns: 30% 25% 30%;
+    }
+  }
+
+  &__segment-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__segment-data-cell {
+    flex: 1 1 100%;
+    color: $colorBlack;
+
+    @media (max-width: 660px) {
+      width: max-content;
+    }
+
+    &-heading {
+      font-size: 12px;
+      text-transform: uppercase;
+      color:$colorGray;
+
+      @media (max-width: 660px) {
+        font-size: 11px;
+      }
+    }
+  }
+}

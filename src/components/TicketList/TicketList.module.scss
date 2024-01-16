@@ -1,0 +1,83 @@
+.ticket-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+  user-select: none;
+  @include fontMain;
+
+  @media (max-width: 660px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__progress {
+    border-radius: $borderRadius;
+    height: 10px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      $colorBlueMain calc(100% / 8),
+      $colorBlueLight calc(100%/ 6),
+      $colorWhite calc(100% / 5)
+    );
+    background-size: 300% 10px;
+    animation: progress 4s infinite linear;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 502px;
+
+    @media (max-width: 660px) {
+      max-width: 340px;
+    }
+
+    &--sm {
+      max-width: max-content;
+      min-width: 166px;
+
+      @media (max-width: 660px) {
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  }
+
+  &__tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 502px;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 15px 0;
+    color: $colorWhite;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: $colorBlueMain;
+    border-radius: $borderRadius;
+    transition: background-color .15s;
+    @include pointerCursor;
+
+    &:hover {
+      background-color: darken($colorBlueMain, 10%);
+    }
+  }
+}
+
+@keyframes progress {
+  0% {
+      background-position: 100% 0;
+  }
+  100% {
+      background-position: -100% 0;
+  }
+}
